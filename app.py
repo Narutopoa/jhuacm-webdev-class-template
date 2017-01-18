@@ -58,10 +58,14 @@ def close_connection(exception):
 ######################################################################
 ###### The stuff above is a library to make things work easily. ######
 ######################################################################
+from datetime import datetime
 
+##app.route('/blarg')
 @app.route('/')
+##def hello(): 
 def index():
-    return "Hello"
+    #return str(datetime.now())
+    return render_template('index.html')
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
